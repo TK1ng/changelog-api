@@ -31,7 +31,7 @@ export const signIn = async (req: any, res: any) => {
         }
         // if password matches, create token and send onward
         const token = createJWT(user);
-        res.status(200).json({ token });
+        return res.status(200).json({ token });
     }
     // No user found, send 400
     return res.json('unable to login')
